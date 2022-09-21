@@ -1,0 +1,80 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef>Weight</th>
+        <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef>Symbol</th>
+        <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div>
+      <h4>ngFor Statement</h4>
+      <table class="table">
+        <tr>
+          <th>Users Id</th>
+          <th>First Name</th>
+          <th>Index</th>
+          <th>First</th>
+          <th>Last</th>
+          <th>Even</th>
+          <th>Odd</th>
+        </tr>
+        <tr
+          *ngFor="
+            let user of users;
+            index as i;
+            first as f;
+            last as l;
+            even as e;
+            odd as o
+          "
+        >
+          <td>{{ user.userId }}</td>
+          <td>{{ user.firstName }}</td>
+          <td>{{ i }}</td>
+          <td>{{ f }}</td>
+          <td>{{ l }}</td>
+          <td>{{ e }}</td>
+          <td>{{ o }}</td>
+        </tr>
+      </table>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<div>
+  <table>
+    <tr>
+      <th>First</th>
+      <th>Second</th>
+      <th>Third</th>
+      <th>Fourth</th>
+    </tr>
+    <tr *ngFor="let prim of prime">
+      <td>{{ prim.productName }}</td>
+    </tr>
+  </table>
+</div>

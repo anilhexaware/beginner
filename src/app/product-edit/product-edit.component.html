@@ -1,0 +1,16 @@
+<form [formGroup]="primericaForms" (ngSubmit)="submit()">
+  <label class="FormGroup"
+    >Name
+    <input type="text" placeholder="Name" formControlName="name" />
+  </label>
+  <label class="FormGroup"
+    >Email
+    <input type="email" placeholder="Email" formControlName="email" />
+  </label>
+  <label class="FormGroup"
+    >Number
+    <input type="number" placeholder="Number" formControlName="number" />
+  </label>
+  <button type="submit" placeholder="Email">Submit</button>
+</form>
+{{ primericaForms.value | json }}

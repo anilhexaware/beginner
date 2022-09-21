@@ -1,0 +1,20 @@
+.one {
+  color: blue;
+  background-color: aquamarine;
+}
+
+.two {
+  background-color: blueviolet;
+}
+
+.c1 {
+  color: brown;
+  text-align: center;
+}
+.container {
+  max-width: 1100px;
+  margin: 20px auto;
+}
+mat-grid-tile {
+  background: lightblue;
+}
